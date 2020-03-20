@@ -8,18 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script>
-        function{
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-        }
-    </script>
 
     <title>플레이스테이션</title>
     <style>
@@ -39,7 +29,33 @@
 
         }
     </style>
+    <script>
+        function q1() {
+            let x1 = $('#input-q1').val()
+            let x2 = $('#input-q2').val()
+            let x3 = $('#input-q3').val()
+            if (x1 == '') {
+                alert("성명을 입력하세요");
+                $('#input-q1').focus();
+            }
+            else if (x1 != "" && x2 == "") {
+                alert("주소를 입력하세요");
+                $('#input-q2').focus();
+            }
+            else if (x1 != "" && x2 != "" && x3 == "") {
+                alert("전화번호를 입력하세요");
+                $('#input-3').focus();
 
+            } else if (x1 != "" && x2 != "" && x3 !== "") {
+                alert("수량을 입력하세요")
+                $('#inputGroupSelect01')
+            }
+        }
+
+
+
+
+    </script>
 
 </head>
 
@@ -60,23 +76,23 @@
         </p>
         <p>
             주문자 성명:
-            <input type="text">
+            <input id='input-q1' type="text">
         </p>
         <p>
             주소:
-            <input type="text">
+            <input id='input-q2' type="text">
 
         </p>
         <p>
             전화번호:
-            <input type="text">
+            <input id='input-q3' type="text">
         </p>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <label class="input-group-text" for="inputGroupSelect01">수량</label>
             </div>
             <select class="custom-select" id="inputGroupSelect01">
-                <option selected>수량을 선택해주세요</option>
+                <option id='select-q1' selected>수량을 선택해주세요</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -84,7 +100,7 @@
         </div>
     </div>
     <div class="wrap">
-        <button type="button" class="btn btn-primary btn-lg"> 주문하기</button>
+        <button onclick="q1()" type="button" class="btn btn-primary btn-lg"> 주문하기</button>
     </div>
     </div>
 </body>
